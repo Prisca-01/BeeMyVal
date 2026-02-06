@@ -31,7 +31,8 @@ The experience guides users through creating a personalized Valentine message, p
   [Case study document](https://docs.google.com/document/d/1DhyzWmPlZzytizseFeA-tQNmh4-YoBe62sUQ7w0RwJc/edit?usp=sharing)
 - 🎨 **Design Document:**  
   [Design document](https://docs.google.com/document/d/1TngR0MORXpHpdLY8Am8ZbWiH5RAtQ_ClUFbf531cR-o/edit?usp=sharing)
-
+- **Task Spreadsheet**
+  [Task Spreadsheet](https://docs.google.com/spreadsheets/d/1RVPBlHFm5_1qUI8xmpv3OQZ6xsQUu5JZifzzZtjurhk/edit?usp=sharing)
 
 ## 🛠️ Built With
 - HTML5 (Semantic HTML)

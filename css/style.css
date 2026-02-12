@@ -1,9 +1,120 @@
-.logo {
-    display: flex;
+/* ====== General styling ====== */
+
+:root {
+  --primary-color: #d99d67;
+  --secondary-color: #cf4131;
+  --assent-color: #a13428;
+  --background-color: #eedcd2;
+  --text-color: #a13428;
+  --neutral-color: #f6ebdf;
+  --device-sm: 600px;
+  --device-md: 768px;
+  --device-lg: 1024px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.center-child {
+  display: grid;
+  place-content: center;
+}
+
+.outline {
+  outline: 1px solid red;
+}
+
+.highlight {
+  background-color: var(--secondary-color);
+}
+
+.highlight-bg {
+  background-color: var(--primary-color);
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ====== Component specific styling ====== */
+
+.header-grid {
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas:
+    "nav"
+    "hero";
+}
+
+.navbar {
+  grid-area: nav;
+}
+
+.logo img {
+  height: 36px;
+  width: auto;
+}
+
+.hero {
+  grid-area: hero;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+}
+
+#about {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 3fr;
+    grid-template-areas:
+      "about about about"
+      "about-1 about-2 about-3"
+      "aside aside aside";
     align-items: center;
+    justify-items: center;
   }
-  .logo img {
-    height: 36px;
-    width: auto;
-    display: block;
+
+  .about-text {
+    grid-area: about;
   }
+
+  .about-1 {
+    grid-area: about-1;
+  }
+
+  .about-2 {
+    grid-area: about-2;
+  }
+
+  .about-3 {
+    grid-area: about-3;
+  }
+
+  .about-grid aside {
+    grid-area: aside;
+  }
+}
+
+footer small {
+  display: block;
+  text-align: center;
+}
+
+@media screen and (max-width: 435px) {
+  .footer-content {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}

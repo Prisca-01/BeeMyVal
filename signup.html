@@ -1,66 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <title>Sign-up | BeeMyVal</title>
-</head>
+  </head>
 
-<body>
-    <header>
-        <nav class="navbar" aria-label="navigation">
-            <a href="index.html" class="logo" aria-label="BeeMyVal homepage">
-                <img src="images/logo.png" alt="BeeMyVal Logo" />
-            </a>
-            <a href="index.html">Home</a>
-            <a href="index.html#about">About</a>
+  <body>
+    <header class="header-grid highlight-bg outline">
+      <nav class="flex navbar outline" aria-label="navigation">
+        <a href="index.html" class="logo" aria-label="BeeMyVal homepage">
+          <img src="images/logo.png" alt="BeeMyVal Logo" />
+        </a>
+        <div class="pages">
+          <a href="index.html">Home</a>
+          <a href="index.html#about">About</a>
 
-            <a href="login.html">Log In</a>
-            <a href="signup.html">Sign Up</a>
-        </nav>
+          <a href="login.html">Log In</a>
+          <a href="signup.html">Sign Up</a>
+        </div>
+      </nav>
     </header>
     <main>
-        <h1>Signup to BeeMyVal</h1>
-        <form action="create.html">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="John Doe" required />
+      <h1>Signup to BeeMyVal</h1>
+      <form action="create.html">
+        <label for="name">Your Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="John Doe"
+          required
+        />
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="john@example.com" required />
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="john@example.com"
+          required
+        />
 
-            <label for="password">Create Password</label>
-            <input type="password" id="password" name="password" placeholder="*****" required />
+        <label for="password">Create Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="*****"
+          required
+        />
 
-            <button type="submit">Sign Up</button>
-        </form>
-        <p>Already have an account? <a href="login.html">Log In</a></p>
+        <button type="submit">Sign Up</button>
+      </form>
+      <p>Already have an account? <a href="login.html">Log In</a></p>
     </main>
     <footer>
-        <div class="footer-content">
-            <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="BeeMyVal Logo" />
-            </a>
+      <div class="footer-content">
+        <a href="index.html" class="logo">
+          <img src="images/logo.png" alt="BeeMyVal Logo" />
+        </a>
 
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <nav aria-label="Footer">
-                    <a href="index.html#contact">Contact Support</a>
-                    <a href="#">Privacy Policy</a>
-                </nav>
-            </div>
-
-            <div class="footer-socials">
-                <a href="#">Twitter</a>
-                <a href="#">Instagram</a>
-            </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <nav aria-label="Footer">
+            <a href="index.html#contact">Contact Support</a>
+            <a href="#">Privacy Policy</a>
+          </nav>
         </div>
 
-        <small class="footer-bottom">
-            &copy; 2026 BeeMyVal. All rights reserved.
-        </small>
-    </footer>
-</body>
+        <div class="footer-socials">
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
 
+      <small class="footer-bottom">
+        &copy; 2026 BeeMyVal. All rights reserved.
+      </small>
+    </footer>
+  </body>
 </html>

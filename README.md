@@ -41,6 +41,52 @@ The experience guides users through creating a personalized Valentine message, p
 - Vercel (deployment)
 
 
+## 🎨 Style Guide
+
+### 1. Color Palette
+The scheme relies on warm tones (reds, ambers, and creams).
+
+| Variable | Hex | Usage Description |
+| :--- | :--- | :--- |
+| `--primary-color` | `#d99d67` | **Warm Amber.** Used for emphasis backgrounds and secondary structural elements. |
+| `--secondary-color` | `#cf4131` | **Vibrant Red.** Used for hover states, highlights, and interactions. |
+| `--assent-color` | `#a13428` | **Deep Red.** The core interactive color. Used for buttons, main text color, and strong calls to action. |
+| `--background-color` | `#eedcd2` | **Pale Peach.** The global background color; softer than white for better readability. |
+| `--neutral-color` | `#f6ebdf` | **Cream.** Used for text on dark backgrounds (like the contact section) or alternating section backgrounds. |
+
+### 2. Spacing & Rhythm
+Spacing is standardized using `rem` units to ensure elements scale with user font settings, while section padding uses viewport units (`vh`/`vw`) for responsive breathing room.
+
+*   **Component Spacing:**
+    *   `--space-xs` (0.75rem): Tight gaps between icons or small text.
+    *   `--space-sm` (1rem): Standard padding for buttons and grid gaps.
+    *   `--space-md` (1.5rem): Margins between moderate elements.
+    *   `--space-lg` (2rem): Separation between larger cards or groups.
+*   **Section Spacing:**
+    *   `--section-py`: 10% of viewport height (vertical padding for major sections).
+    *   `--section-px`: 5% of viewport width (horizontal padding for mobile/tablet).
+    *   `--section-px-lg`: 10% of viewport width (horizontal padding for desktops).
+
+### 3. UI Shapes (Radius)
+To match the soft color palette, rounded corners are used extensively.
+
+*   `--radius-sm` (5px): Buttons and small inputs.
+*   `--radius-md` (15px): Content cards.
+*   `--radius-lg` (25px): Large containers or Hero sections.
+
+### 4. Layout & Breakpoints
+The layout boundaries are defined to handle device responsiveness and container sizing.
+
+*   **Breakpoints:**
+    *   Mobile Limit: `600px`
+    *   Tablet: `768px`
+    *   Desktop: `1024px`
+*   **Vertical Sizing:**
+    *   Hero/Large Containers: `80vh`
+    *   Medium Containers: `40vh`
+    *   Small Containers: `20vh`
+
+
 ## 🚀 Getting Started
 
 To run this project locally:

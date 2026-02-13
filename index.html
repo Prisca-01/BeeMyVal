@@ -1,11 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BeeMyVal</title>
+    <title>BeeMyVal | Your Favorite Love Messenger</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
+
   <body>
     <header class="header-grid highlight-bg outline container-lg">
       <nav class="flex navbar outline" aria-label="navigation">
@@ -14,7 +15,7 @@
         </a>
         <div class="pages">
           <a href="/">Home</a>
-          <a href="#about">About</a>
+          <a href="index.html#about">About</a>
 
           <a href="login.html">Log In</a>
           <a href="signup.html">Sign Up</a>
@@ -24,10 +25,10 @@
       <section id="hero" class="highlight outline hero">
         <h1>Make the Moment Count</h1>
         <p>
-          Whether soft or loud, distant or close,<br />ask your favorite person
-          to be your Valentine.
+          Whether soft or loud, distant or close, ask your favorite person to be
+          your Valentine.
         </p>
-        <a href="#form" class="cta-button">Create Your Valentine</a>
+        <a href="signup.html" class="cta-button">Create Your Valentine</a>
       </section>
     </header>
 
@@ -72,49 +73,28 @@
           </p>
         </aside>
       </section>
-
-      <section id="form" class="outline">
-        <h2>Create Your Love Note</h2>
-        <form action="/" method="POST">
-          <label for="receiver">To:</label>
-          <input type="text" id="receiver" name="receiver" placeholder="To:" />
-          <label for="message">Your Message</label>
-          <textarea
-            id="message"
-            name="message"
-            placeholder="Your Message"
-          ></textarea>
-          <input type="submit" value="Submit" />
-        </form>
-      </section>
-
-      <section id="preview" class="outline">
-        <h2>Preview Your Card</h2>
-        <div class="question1">
-          <h3>[Step 1: The Note]</h3>
-          <p>Your message preview here...</p>
-          <button>I have a question</button>
-        </div>
-
-        <div class="question2">
-          <h3>[Step 2: The Question]</h3>
-          <p>Will you Bee my Valentine?</p>
-          <button class="yes">YES!</button>
-          <button class="later">Maybe Later...</button>
-        </div>
+      <section id="contact" class="contact outline highlight">
+        <h5>Need Help?</h5>
+        <p>
+          Having trouble creating your Valentine? Or just want to say hi? Reach
+          out to our cupid support team.
+        </p>
+        <a href="mailto:love@beemyval.com" class="contact-link"
+          >love@beemyval.com</a
+        >
       </section>
     </main>
 
     <footer class="outline highlight">
       <div class="footer-content flex gap-lg">
-        <a href="/" class="logo">
+        <a href="index.html" class="logo">
           <img src="images/logo.png" alt="BeeMyVal Logo" />
         </a>
 
         <div class="footer-links">
           <h4>Quick Links</h4>
           <nav aria-label="Footer" class="flex-col gap-xs">
-            <a href="#contact" class="clean-link">Contact Support</a>
+            <a href="index.html#contact" class="clean-link">Contact Support</a>
             <a href="#" class="clean-link">Privacy Policy</a>
           </nav>
         </div>

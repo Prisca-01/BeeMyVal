@@ -10,6 +10,28 @@
   --device-sm: 600px;
   --device-md: 768px;
   --device-lg: 1024px;
+  --height-lg: 80vh;
+  --height-md: 40vh;
+  --height-sm: 20vh;
+
+  /* Spacing */
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+
+  /* Section Padding */
+  --section-py: 10vh;
+  --section-px: 5vw;
+  --section-px-lg: 10vw;
+
+  /* Border Radius */
+  --radius-sm: 5px;
+  --radius-md: 15px;
+  --radius-lg: 25px;
+
+  /* Layout */
+  --nav-height: 50px;
 }
 
 * {
@@ -42,11 +64,55 @@
   flex-wrap: wrap;
 }
 
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.gap-xs {
+  gap: var(--space-xs);
+}
+
+.gap-lg {
+  gap: var(--space-lg);
+}
+
+.clean-link {
+  text-decoration: none;
+  color: var(--background-color);
+}
+
+.container-lg {
+  min-height: var(--height-lg);
+}
+
+.container-md {
+  min-height: var(--height-md);
+}
+
+.container-sm {
+  min-height: var(--height-sm);
+}
+
+button {
+  margin-top: var(--space-sm);
+  padding: var(--space-sm);
+  background-color: var(--assent-color);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
 /* ====== Component specific styling ====== */
 
 .header-grid {
   display: grid;
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: var(--nav-height) 1fr;
   grid-template-areas:
     "nav"
     "hero";
@@ -54,6 +120,7 @@
 
 .navbar {
   grid-area: nav;
+  padding: 0 2vw;
 }
 
 .logo img {
@@ -66,10 +133,30 @@
   justify-self: center;
   align-self: center;
   text-align: center;
+  border-radius: var(--radius-lg);
+  padding: var(--section-py) var(--section-px-lg);
 }
 
-#about {
+.cta-button {
+  display: inline-block;
+  margin-top: var(--space-md);
+  padding: var(--space-xs) var(--space-md);
+  background-color: var(--assent-color);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  font-weight: bold;
+}
+
+.about {
   text-align: center;
+  padding: var(--section-py) var(--section-px);
+}
+
+.about-card {
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin: var(--space-sm);
 }
 
 @media screen and (min-width: 768px) {
@@ -106,15 +193,24 @@
   }
 }
 
+footer {
+  padding: var(--space-lg) var(--section-px);
+}
+
+.footer-links h4,
+.footer-socials h4 {
+  margin-bottom: var(--space-sm);
+}
+
 footer small {
   display: block;
   text-align: center;
+  margin-top: var(--space-lg);
 }
 
 @media screen and (max-width: 435px) {
   .footer-content {
     flex-direction: column;
-    justify-content: space-between;
     align-items: flex-start;
   }
 }

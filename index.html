@@ -7,18 +7,21 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header>
-      <nav class="navbar" aria-label="navigation">
-        <a href="index.html" class="logo" aria-label="BeeMyVal homepage">
+    <header class="header-grid highlight-bg outline">
+      <nav class="flex navbar outline" aria-label="navigation">
+        <a href="/" class="logo" aria-label="BeeMyVal homepage">
           <img src="images/logo.png" alt="BeeMyVal Logo" />
         </a>
-        <a href="index.html">Home</a>
-        <a href="#about">About</a>
-        <a href="login.html">Log In</a>
-        <a href="signup.html">Sign Up</a>
+        <div class="pages">
+          <a href="/">Home</a>
+          <a href="#about">About</a>
+
+          <a href="login.html">Log In</a>
+          <a href="signup.html">Sign Up</a>
+        </div>
       </nav>
 
-      <section id="hero">
+      <section id="hero" class="highlight outline hero">
         <h1>Make the Moment Count</h1>
         <p>
           Whether soft or loud, distant or close, ask your favorite person to be
@@ -29,10 +32,12 @@
     </header>
 
     <main>
-      <section id="about">
-        <h2>About BeeMyVal</h2>
-        <p>Your Favorite Love Messenger</p>
-        <article class="about-card">
+      <section id="about" class="about-grid highlight-bg outline">
+        <div class="about-text">
+          <h2>About BeeMyVal</h2>
+          <p>Your Favorite Love Messenger</p>
+        </div>
+        <article class="about-card about-1 outline">
           <h3>The Vision</h3>
           <p>
             Love without boundaries. Distance should never be a barrier to
@@ -40,7 +45,7 @@
             BeeMyVal bridges the gap.
           </p>
         </article>
-        <article class="about-card">
+        <article class="about-card about-2 outline">
           <h3>The Experience</h3>
           <p>
             More than a message. We transform the standard Valentine invite into
@@ -48,7 +53,7 @@
             to set the mood.
           </p>
         </article>
-        <article class="about-card">
+        <article class="about-card about-3 outline">
           <h3>The Connection</h3>
           <p>
             From the excitement of a first "will you?" to the comfort of
@@ -66,31 +71,30 @@
       </section>
     </main>
 
-    <footer>
-      <div class="footer-content">
+    <footer class="outline highlight">
+      <div class="footer-content flex">
         <a href="index.html" class="logo">
-            <img src="images/logo.png" alt="BeeMyVal Logo" />
+          <img src="images/logo.png" alt="BeeMyVal Logo" />
         </a>
 
         <div class="footer-links">
-            <h4>Quick Links</h4>
-            <nav aria-label="Footer navigation">
-                <a href="#about">About Us</a>
-                <a href="#contact">Contact Support</a>
-                <a href="#">Privacy Policy</a>
-            </nav>
+          <h4>Quick Links</h4>
+          <nav aria-label="Footer">
+            <a href="index.html#contact">Contact Support</a>
+            <a href="#">Privacy Policy</a>
+          </nav>
         </div>
 
         <div class="footer-socials">
-            <h4>Connect</h4>
-            <ul class="social-list">
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Instagram</a></li>
-            </ul>
+          <h4>Socials:</h4>
+          <a href="#">Twitter</a>
+          <a href="#">Instagram</a>
         </div>
       </div>
 
-        <small>&copy; 2026 BeeMyVal. All rights reserved.</small>
+      <small class="footer-bottom outline">
+        &copy; 2026 BeeMyVal. All rights reserved.
+      </small>
     </footer>
   </body>
 </html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Valentine</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar" aria-label="navigation">
+            <a href="index.html" class="logo" aria-label="BeeMyVal homepage">
+                <img src="images/logo.png" alt="BeeMyVal Logo" />
+            </a>
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+
+            <a href="index.html">Log Out</a>
+        </nav>
+    </header>
+    <main>
+        <section id="dashboard">
+            <h1>Create Your Love Note</h1>
+            <p>Fill in the details below to generate your custom Valentine link.</p>
+
+            <form id="valentine-form">
+                <label for="receiver">To:</label>
+                <input type="text" id="receiver" name="receiver" placeholder="To:" required />
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Write something from the heart..."
+                    required></textarea>
+                <input type="submit" value="Submit" />
+
+                <label for="music-choice">Set the Mood (Pick a Song)</label>
+                <select id="music-choice" name="music">
+                    <option value="Breatheless.mp3">🎵 Breatheless - Shayne Ward</option>
+                    <option value="LittleThings.mp3">🎵 Little Things - Ella Mai</option>
+                    <option value="Perfect.mp3">🎵 Perfect - Ed Sheeran</option>
+                    <option value="Love-Egbugomo.mp3">🎵 Love Egbugomo - Chike & Syemca</option>
+                </select>
+
+                <button type="button" id="preview-btn">Preview My Card</button>
+            </form>
+        </section>
+
+        <section id="live-preview" class="hidden">
+            <hr>
+            <h2>Your Card Preview</h2>
+            <p>This is exactly what they will see!</p>
+
+            <div class="preview-card-container">
+                <h3 id="preview-recipient">Dear [Name],</h3>
+                <p id="preview-text">Your romantic message will appear here...</p>
+                <p><strong>Selected Mood:</strong></p>
+                <audio id="preview-audio-player" controls preload="auto">
+                    <source src="assets/audio/Breathless.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+            </div>
+
+            <div id="share-section">
+                <h3>Ready to share the love?</h3>
+                <p>Copy this link and send it to your person via WhatsApp or DM:</p>
+                <div class="link-box">
+                    <input type="text" id="generated-link" readonly value="Link will appear here...">
+                    <button type="button" id="copy-btn">Copy Link</button>
+                </div>
+
+                <div class="social-share">
+                    <p>Or share directly:</p>
+                    <a href="#" class="share-icon" aria-label="Share on WhatsApp">
+                        <img src="images/whatsapp.png" alt="WhatsApp" />
+                    </a>
+                    <a href="#" class="share-icon" aria-label="Share on Instagram">
+                        <img src="images/instagram.png" alt="Instagram" />
+                    </a>
+                </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="BeeMyVal Logo" />
+            </a>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <nav aria-label="Footer">
+                    <a href="index.html#contact">Contact Support</a>
+                    <a href="#">Privacy Policy</a>
+                </nav>
+            </div>
+
+            <div class="footer-socials">
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+
+        <small class="footer-bottom">
+            &copy; 2026 BeeMyVal. All rights reserved.
+        </small>
+    </footer>
+</body>
+
+</html>

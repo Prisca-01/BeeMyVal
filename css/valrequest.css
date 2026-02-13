@@ -1,0 +1,68 @@
+/* Styles for the Valentine Request Page (valrequest.html) */
+
+body {
+  background-color: var(--background-color);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  width: 100%;
+  max-width: 600px;
+  padding: var(--space-md);
+  margin: 0 auto;
+}
+
+section {
+  background-color: var(--neutral-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  margin-bottom: var(--space-lg);
+}
+
+img {
+  max-width: 200px;
+  height: auto;
+  margin-bottom: var(--space-md);
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--assent-color);
+  margin: var(--space-md) 0;
+}
+
+p {
+  color: var(--text-color);
+  margin-bottom: var(--space-md);
+}
+
+audio {
+  width: 100%;
+  margin: var(--space-md) 0;
+  border-radius: var(--radius-sm);
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: var(--space-md);
+  margin-top: var(--space-sm);
+  border: none;
+  border-radius: var(--radius-md);
+}
+
+
+/* "I have a question" button */
+section.message button {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+section.message button:hover {
+  background-color: #c58c5a;
+}

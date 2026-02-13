@@ -22,13 +22,6 @@ section {
   text-align: center;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   margin-bottom: var(--space-lg);
-  /* animation */
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 img {
@@ -41,12 +34,9 @@ h2 {
   font-size: 2rem;
   color: var(--assent-color);
   margin: var(--space-md) 0;
-  font-family: inherit; /* Or a fancy font if we had one */
 }
 
 p {
-  font-size: 1.1rem;
-  line-height: 1.6;
   color: var(--text-color);
   margin-bottom: var(--space-md);
 }
@@ -57,7 +47,6 @@ audio {
   border-radius: var(--radius-sm);
 }
 
-/* Buttons */
 button {
   display: block;
   width: 100%;
@@ -65,35 +54,8 @@ button {
   margin-top: var(--space-sm);
   border: none;
   border-radius: var(--radius-md);
-  font-size: 1.2rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.2s, background-color 0.3s;
 }
 
-/* Specific button styling to match intent */
-/* Assuming buttons in HTML: First button in question section is YES */
-section.question button:first-of-type {
-  background-color: var(--secondary-color); /* Red */
-  color: white;
-  font-size: 1.5rem;
-}
-
-section.question button:first-of-type:hover {
-  background-color: #b03525; /* Darker red */
-  transform: scale(1.05); /* Pulse effect */
-}
-
-section.question button:last-of-type {
-  background-color: transparent;
-  border: 2px solid var(--text-color);
-  color: var(--text-color);
-  font-size: 1rem;
-}
-
-section.question button:last-of-type:hover {
-  background-color: #e0e0e0;
-}
 
 /* "I have a question" button */
 section.message button {

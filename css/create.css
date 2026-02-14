@@ -1,154 +1,168 @@
-/* Specific styles for Create page */
-main {
+/* Specific styles for create form page */
+
+.create {
   padding: var(--section-py) var(--section-px);
   min-height: 80vh;
 }
 
-#dashboard {
+.create__dashboard {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
 }
 
-#dashboard h1 {
+.create__title {
   margin-bottom: var(--space-sm);
-  color: var(--assent-color);
+  color: var(--color-accent);
 }
 
-#dashboard > p {
+.create__description {
   margin-bottom: var(--space-lg);
 }
 
-form {
+/* === Form Component === */
+
+.form {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
-  background-color: var(--neutral-color);
+}
+
+.form--card {
+  background-color: var(--color-neutral);
   padding: var(--space-lg);
   border-radius: var(--radius-md);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-soft);
   text-align: left;
 }
 
-label {
-  font-weight: bold;
-  color: var(--text-color);
-  margin-bottom: -0.5rem; /* tight spacing between label and input */
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
 }
 
-input[type="text"],
-select,
-textarea {
+.form__label {
+  font-weight: bold;
+  color: var(--color-text);
+}
+
+.form__input,
+.form__textarea,
+.form__select {
   padding: var(--space-sm);
-  border: 1px solid var(--primary-color);
+  border: 1px solid var(--color-primary);
   border-radius: var(--radius-sm);
   width: 100%;
 }
 
-textarea {
+.form__textarea {
   resize: vertical;
+  font-family: var(--font-accent);
 }
 
-input[type="submit"],
-#preview-btn {
+.form__button {
   padding: var(--space-sm);
-  border: none;
   border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
 }
 
-input[type="submit"] {
-  background-color: var(--assent-color);
-  color: white;
+.form__button--primary {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border: none;
 }
 
-input[type="submit"]:hover {
-  background-color: var(--secondary-color);
+.form__button--primary:hover {
+  background-color: var(--color-secondary);
 }
 
-#preview-btn {
+.form__button--outline {
   background-color: transparent;
-  border: 2px solid var(--assent-color);
-  color: var(--assent-color);
-  margin-top: var(--space-xs);
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
 }
 
-#preview-btn:hover {
-  background-color: var(--assent-color);
-  color: white;
+.form__button--outline:hover {
+  background-color: var(--color-accent);
+  color: var(--color-white);
 }
 
-/* Live Preview Section */
-#live-preview {
+/* === Preview Section === */
+
+.preview {
   max-width: 800px;
   margin: var(--space-lg) auto;
   text-align: center;
 }
 
-.hidden {
-  display: none;
-}
-
-.preview-card-container {
-  background-color: var(--primary-color);
-  color: white; /* Contrast text since primary-color is darkish orange */
+.preview__card {
+  background-color: var(--color-primary);
+  color: var(--color-white);
   padding: var(--space-lg);
   border-radius: var(--radius-md);
   margin: var(--space-lg) 0;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: var(--shadow-soft);
   text-align: left;
 }
 
-.preview-card-container h3 {
+.preview__recipient {
   margin-bottom: var(--space-sm);
-  color: var(--assent-color); 
+  color: var(--color-accent);
 }
 
-.preview-card-container p {
+.preview__text {
+  font-family: var(--font-accent);
   margin-bottom: var(--space-md);
   line-height: 1.6;
 }
 
-/* Share Section */
-#share-section {
-  text-align: center;
-  background-color: var(--neutral-color);
+/* === Share Section === */
+
+.share {
+  background-color: var(--color-neutral);
   padding: var(--space-lg);
   border-radius: var(--radius-md);
   margin-top: var(--space-lg);
+  text-align: center;
 }
 
-.link-box {
+.share__link-box {
   display: flex;
   gap: var(--space-xs);
   margin: var(--space-md) 0;
   flex-wrap: wrap;
 }
 
-.link-box input {
+.share__input {
   flex: 1;
   padding: var(--space-xs);
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-primary);
   border-radius: var(--radius-sm);
 }
 
-#copy-btn {
+.share__button {
   padding: var(--space-xs) var(--space-md);
-  background-color: var(--secondary-color);
-  color: white;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
   border: none;
   border-radius: var(--radius-sm);
   cursor: pointer;
 }
 
-.social-share {
+.share__socials {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: var(--space-md);
-  margin-top: var(--space-md);
 }
 
-.share-icon img {
+.share__icon img {
   width: 40px;
   height: 40px;
+}
+
+/* Utility */
+.hidden {
+  display: none;
 }

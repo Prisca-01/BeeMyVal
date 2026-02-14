@@ -9,47 +9,49 @@
   </head>
 
   <body>
-    <!-- The recipient page does not require an header or footer by the project design, this is intentional -->
-    <main>
-      <section class="message">
-        <picture>
-          <source
-            media="(min-width: 400px)"
-            srcset="images/bee.png"
-            type="image/png"
-          />
-          <img src="images/bee.png" alt="A cute bee holding a heart" />
-        </picture>
-        <h1 class="screen-reader-only"></h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate eos
-          repellendus ipsam possimus, nesciunt inventore, quaerat at eligendi
-          explicabo similique delectus, omnis hic voluptatem eius cupiditate
-          earum minus tempora officiis.
+    <!-- The recipient page does not require a header or footer by the project design, this is intentional -->
+    <main class="valentine">
+      <section class="valentine__card valentine__card--message">
+        <img
+          src="images/bee.png"
+          alt="A cute bee holding a heart"
+          class="valentine__bee"
+        />
+
+        <p class="valentine__text">
+          Hey Sarah, I know we are miles apart, but you make me smile every
+          single day...
         </p>
-        <audio controls autoplay loop>
-          <source src="" type="audio/mpeg" />
-          Unable to play audio playback
+
+        <audio class="valentine__audio" controls>
+          <source src="assets/audio/Breathless.mp3" type="audio/mpeg" />
+          Unable to play audio
         </audio>
-        <button>I have a question...</button>
+
+        <button class="valentine__button valentine__button--primary">
+          I have a question...
+        </button>
       </section>
 
-      <section class="question">
-        <picture>
-          <source
-            media="(min-width: 400px)"
-            srcset="images/bee2.png"
-            type="image/png"
-          />
-          <img src="images/bee2.png" alt="A cute bee holding a heart" />
-        </picture>
-        <h2>Will you Bee my Valentine?</h2>
-        <audio controls autoplay loop>
-          <source src="" type="audio/mpeg" />
-          Unable to play audio playback
+      <section class="valentine__card valentine__card--question hidden">
+        <img
+          src="images/bee.png"
+          alt="A cute bee holding a heart"
+          class="valentine__bee"
+        />
+
+        <h2 class="valentine__title">Will you Bee my Valentine?</h2>
+
+        <audio class="valentine__audio" controls>
+          <source src="assets/audio/Breathless.mp3" type="audio/mpeg" />
+          Unable to play audio
         </audio>
-        <button>YES!</button>
-        <button>Maybe Later...</button>
+
+        <button class="valentine__button valentine__button--yes">YES!</button>
+
+        <button class="valentine__button valentine__button--no">
+          Maybe Later...
+        </button>
       </section>
     </main>
   </body>

@@ -1,68 +1,103 @@
 /* Styles for the Valentine Request Page (valrequest.html) */
 
 body {
-  background-color: var(--background-color);
   min-height: 100vh;
+  margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-main {
+  background-image: url("../images/background.png");
+  background-size: cover;
   width: 100%;
-  max-width: 600px;
-  padding: var(--space-md);
-  margin: 0 auto;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-section {
-  background-color: var(--neutral-color);
-  border-radius: var(--radius-lg);
+.valentine {
+  width: 100%;
   padding: var(--space-lg);
+}
+
+.valentine__card {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: var(--space-xl);
+  border-radius: 32px;
   text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  background: var(--font-accent);
+  box-shadow: var(--shadow-soft);
+}
+
+.valentine__bee {
+  width: 120px;
+  background: var(--color-neutral);
+  border-radius: 50%;
+}
+
+/* ===== Typography ===== */
+
+.valentine__title {
+  font-size: var(--fs-h2);
+  margin: var(--space-lg) 0;
+  color: var(--color-secondary);
+}
+
+.valentine__text {
+  font-size: var(--fs-big);
+  font-family: var(--font-accent);
+  line-height: 1.6;
   margin-bottom: var(--space-lg);
+  color: var(--color-black);
 }
 
-img {
-  max-width: 200px;
-  height: auto;
-  margin-bottom: var(--space-md);
-}
-
-h2 {
-  font-size: 2rem;
-  color: var(--assent-color);
-  margin: var(--space-md) 0;
-}
-
-p {
-  color: var(--text-color);
-  margin-bottom: var(--space-md);
-}
-
-audio {
+.valentine__audio {
   width: 100%;
-  margin: var(--space-md) 0;
-  border-radius: var(--radius-sm);
-}
-
-button {
-  display: block;
-  width: 100%;
-  padding: var(--space-md);
-  margin-top: var(--space-sm);
-  border: none;
+  margin: var(--space-sm) 0;
   border-radius: var(--radius-md);
 }
 
-
-/* "I have a question" button */
-section.message button {
-  background-color: var(--primary-color);
-  color: white;
+.valentine__button {
+  width: 100%;
+  padding: var(--space-md);
+  border-radius: 999px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: var(--space-sm);
 }
 
-section.message button:hover {
-  background-color: #c58c5a;
+.valentine__button--primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.valentine__button--yes {
+  background: var(--color-accent);
+  color: var(--color-white);
+}
+
+.valentine__button--no {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .valentine__card {
+    padding: var(--space-lg);
+  }
+
+  .valentine__title {
+    font-size: var(--fs-big);
+  }
+
+  .valentine__text {
+    font-size: var(--fs-small);
+  }
 }

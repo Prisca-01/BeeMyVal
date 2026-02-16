@@ -81,7 +81,8 @@
 /* Base Component */
 .btn {
   display: inline-block;
-  padding: 0.8rem 1.5rem;
+  padding: var(--space-sm) var(--space-md);
+  margin-top: var(--space-md);
   border-radius: var(--radius-lg);
   font-family: var(--font-main);
   text-decoration: none;
@@ -90,13 +91,14 @@
 }
 
 .btn--primary {
-  background-color: var(--color-secondary);
+  background-color: var(--color-accent);
   color: var(--color-white);
+  font-weight: var(--fw-bold);
   border: none;
 }
 
 .btn--primary:hover {
-  background-color: var(--color-accent);
+  background-color: var(--color-secondary);
   transform: translateY(-2px);
 }
 
@@ -208,7 +210,7 @@
 }
 
 .nav__item-cta {
-  background-color: var(--color-secondary);
+  background-color: var(--color-accent);
   color: var(--color-neutral);
   padding: 0.5rem 1.2rem;
   border-radius: var(--radius-lg);
@@ -216,7 +218,8 @@
 }
 
 .nav__item-cta:hover {
-  background-color: var(--color-hover);
+  background-color: var(--color-secondary);
+  color: var(--color-white);
 }
 .logo img {
   height: 48px;
@@ -264,17 +267,6 @@
   font-weight: var(--fw-bold);
   color: var(--color-accent);
   margin-bottom: var(--space-lg);
-}
-
-.cta__button {
-  display: inline-block;
-  margin-top: var(--space-md);
-  padding: var(--space-sm) var(--space-md);
-  background-color: var(--color-accent);
-  color: white;
-  text-decoration: none;
-  border-radius: var(--radius-lg);
-  font-weight: bold;
 }
 
 /* === About Section (Block) ==== */
@@ -420,7 +412,7 @@
 
   .header-grid {
     display: grid;
-    grid-template-rows: var(--nav-height-mobile) 1fr;
+    grid-template-rows: var(--nav-height) 1fr;
     grid-template-areas:
       "nav"
       "hero";
@@ -429,7 +421,7 @@
 
   .nav__links {
     position: fixed;
-    top: var(--nav-height-mobile);
+    top: var(--nav-height);
     left: 0;
     width: 100%;
     z-index: 1000;

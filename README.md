@@ -7,6 +7,11 @@ BeeMyVal is a love-themed web experience designed to help users ask someone spec
 - **Prisca Onyemaechi**
 - **Daniel Chisom**
 
+## Individual Case Study Links
+
+  **[Prisca Onyemaechi](https://medium.com/@priscaonyemaechi26/beyond-the-buzz-crafting-a-digital-sanctuary-for-modern-romance-a92c64a98aba)**
+
+  **[Daniel Chisom](https://medium.com/@chinwezechisom/beemyval-case-study-7f9cec37c7d6)**
 
 ## 📖 Case Study Summary
 

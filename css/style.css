@@ -51,8 +51,8 @@
   --fw-bold: 700;
 
   --transition: all 0.3s ease;
-  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08),
-    0 4px 12px rgba(217, 157, 103, 0.15);
+  --shadow-soft:
+    0 10px 30px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(217, 157, 103, 0.15);
 }
 
 * {
@@ -295,7 +295,9 @@
   height: 250px;
   border-radius: var(--radius-lg);
   border: 1px solid rgba(161, 52, 40, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .about__card:hover {
@@ -470,4 +472,11 @@
 
 .contact__link:hover {
   text-decoration: underline;
+}
+
+.caveat-font {
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }

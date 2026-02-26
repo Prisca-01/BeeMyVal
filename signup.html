@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -14,9 +14,7 @@
         <a href="/" class="logo-link" aria-label="BeeMyVal homepage">
           <img src="images/logo.png" alt="BeeMyVal Logo" class="nav__logo" />
         </a>
-        <button class="nav__toggle" aria-label="Open menu">
-          ☰
-        </button> 
+        <button class="nav__toggle" aria-label="Open menu">☰</button>
         <div class="nav__links">
           <a href="/" class="nav__item">Home</a>
           <a href="index.html#about" class="nav__item">About</a>
@@ -28,7 +26,7 @@
     </header>
     <main class="form__container">
       <h1 class="form__title">Create an Account</h1>
-      <form action="create.html" class="form">
+      <form id="signup-form" class="form">
         <label for="name" class="form__label">Your Name</label>
         <input
           type="text"
@@ -59,7 +57,9 @@
           required
         />
 
-        <button type="submit" class="btn btn--primary">Sign Up</button>
+        <button type="submit" id="signup-btn" class="btn btn--primary">
+          Sign Up
+        </button>
       </form>
       <p class="paragraph">
         Already have an account? <a href="login.html">Log In</a>
@@ -92,5 +92,6 @@
     </footer>
 
     <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
   </body>
 </html>

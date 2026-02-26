@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,6 +6,20 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/forms.css" />
     <title>Login | BeeMyVal</title>
+
+    <!-- custom font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Carme&family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
@@ -14,9 +28,7 @@
         <a href="/" class="logo-link" aria-label="BeeMyVal homepage">
           <img src="images/logo.png" alt="BeeMyVal Logo" class="nav__logo" />
         </a>
-        <button class="nav__toggle" aria-label="Open menu">
-          ☰
-        </button> 
+        <button class="nav__toggle" aria-label="Open menu">☰</button>
         <div class="nav__links">
           <a href="/" class="nav__item">Home</a>
           <a href="index.html#about" class="nav__item">About</a>
@@ -28,7 +40,7 @@
     </header>
     <main class="form__container">
       <h1 class="form__title">Login to BeeMyVal</h1>
-      <form action="create.html" class="form">
+      <form id="login-form" class="form">
         <label for="email" class="form__label">Email</label>
         <input
           type="email"
@@ -49,7 +61,9 @@
           required
         />
 
-        <button type="submit" class="btn btn--primary">Login</button>
+        <button type="submit" id="login-btn" class="btn btn--primary">
+          Login
+        </button>
       </form>
       <p class="paragraph">
         New here? <a href="signup.html">Create an account</a>
@@ -82,5 +96,6 @@
     </footer>
 
     <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
   </body>
 </html>

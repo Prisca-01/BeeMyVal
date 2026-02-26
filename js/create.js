@@ -1,39 +1,9 @@
 // 1. Mock data
-const mockRequests = [
-  { recipient: "Rose", date: "2026-02-14", status: "accepted" },
-  { recipient: "Amaka", date: "2026-02-12", status: "pending" },
-  { recipient: "My love", date: "2026-02-10", status: "declined" },
-];
-
-// 2. Runs when the page loads
-document.addEventListener("DOMContentLoaded", () => {
-  // Personalized Welcome Message
-  const userName = localStorage.getItem("beemyval_user");
-  const displayElement = document.getElementById("user-display-name");
-  if (userName && displayElement) {
-    displayElement.textContent = userName;
-  }
-
-  // Preview Logic
-  const previewBtn = document.getElementById("preview-btn");
-  const previewSection = document.getElementById("live-preview");
-
-  if (previewBtn) {
-    previewBtn.addEventListener("click", () => {
-      const recipient = document.getElementById("receiver").value;
-      const message = document.getElementById("message").value;
-
-      document.getElementById("preview-recipient").textContent = `Dear ${
-        recipient || "[Name]"
-      }`;
-      document.getElementById("preview-text").textContent =
-        message || "Your message will appear here...";
-
-      previewSection.classList.remove("hidden");
-      previewSection.scrollIntoView({ behavior: "smooth" });
-    });
-  }
-});
+// const mockRequests = [
+//   { recipient: "Rose", date: "2026-02-14", status: "accepted" },
+//   { recipient: "Amaka", date: "2026-02-12", status: "pending" },
+//   { recipient: "My love", date: "2026-02-10", status: "declined" },
+// ];
 
 // 3. Navigation functions: Handles switching views within the dashboard
 function showSection(sectionId) {
@@ -46,7 +16,13 @@ function showSection(sectionId) {
 
   // If opening the status section, draw the list of cards
   if (sectionId === "status-section") {
-    renderStatusList(mockRequests);
+    const messages = JSON.parse(
+      localStorage.getItem("beemyval_messages") || "[]",
+    );
+    const filteredMessages = messages.filter(
+      (msg) => msg.userName === localStorage.getItem("beemyval_user"),
+    );
+    renderStatusList(filteredMessages);
   }
 }
 
@@ -85,7 +61,115 @@ function renderStatusList(requests) {
       </div>
       <span class="status status-${req.status}">${req.status}</span>
     </div>
-  `
+  `,
     )
     .join("");
 }
+
+function submitMessage(event) {
+  if (event) event.preventDefault();
+  // save message to localStorage
+  const recipient = document.getElementById("receiver").value;
+  const message = document.getElementById("message").value;
+  const music = document.getElementById("music-choice").value;
+  const userName = localStorage.getItem("beemyval_user");
+
+  if (!recipient || !message) {
+    alert("Please fill in both the recipient and message fields.");
+    return;
+  }
+
+  const uniqueId = Date.now().toString(36) + Math.random().toString(36).substring(2);
+
+  const newData = {
+    id: uniqueId,
+    recipient,
+    date: new Date().toISOString().split("T")[0],
+    status: "pending",
+    message,
+    music,
+    userName: userName || "Anonymous",
+  };
+
+  // store in localstorage for now
+  const existingMessages = JSON.parse(
+    localStorage.getItem("beemyval_messages") || "[]",
+  );
+  localStorage.setItem(
+    "beemyval_messages",
+    JSON.stringify([...existingMessages, newData]),
+  );
+  
+  // Generate custom link
+  const baseUrl = window.location.origin + window.location.pathname.replace('create.html', '');
+  const customLink = `${baseUrl}valrequest.html?id=${uniqueId}`;
+  
+  // Update the link input field
+  const linkInput = document.getElementById("generated-link");
+  if (linkInput) {
+    linkInput.value = customLink;
+  }
+
+  alert("Your message has been sent! You can now copy the link from the preview section.");
+
+  // Reset form but don't go back to home immediately so they can copy the link
+  // document.getElementById("valentine-form").reset();
+  // showHome();
+}
+
+// 2. Runs when the page loads
+document.addEventListener("DOMContentLoaded", () => {
+  // Personalized Welcome Message
+  const userName = localStorage.getItem("beemyval_user");
+  const displayElement = document.getElementById("user-display-name");
+  if (userName && displayElement) {
+    displayElement.textContent = userName;
+  }
+
+  // Preview Logic
+  const previewBtn = document.getElementById("preview-btn");
+  const previewSection = document.getElementById("live-preview");
+
+  if (previewBtn) {
+    previewBtn.addEventListener("click", () => {
+      const recipient = document.getElementById("receiver").value;
+      const message = document.getElementById("message").value;
+      const music = document.getElementById("music-choice").value;
+
+      document.getElementById("preview-recipient").textContent = `Dear ${
+        recipient || "[Name]"
+      }`;
+      document.getElementById("preview-text").textContent =
+        message || "Your message will appear here...";
+
+      const audioPlayer = document.getElementById("preview-audio-player");
+      audioPlayer.src = `assets/audio/${music}`;
+      audioPlayer.load();
+
+      previewSection.classList.remove("hidden");
+      previewSection.scrollIntoView({ behavior: "smooth" });
+    });
+  }
+
+  const valentineForm = document.getElementById("valentine-form");
+  if (valentineForm) {
+    valentineForm.addEventListener("submit", submitMessage);
+  }
+
+  const copyBtn = document.getElementById("copy-btn");
+  if (copyBtn) {
+    copyBtn.addEventListener("click", () => {
+      const linkInput = document.getElementById("generated-link");
+      if (linkInput) {
+        navigator.clipboard
+          .writeText(linkInput.value)
+          .then(() => {
+            alert("Link copied to clipboard!");
+          })
+          .catch((err) => {
+            console.error("Failed to copy link: ", err);
+          });
+      }
+    });
+  }
+});

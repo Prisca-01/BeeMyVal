@@ -24,9 +24,7 @@
   border-radius: var(--radius-md);
   text-align: center;
   cursor: pointer;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 2px solid transparent;
   box-shadow: var(--shadow-soft);
 }
@@ -189,21 +187,63 @@
   border-radius: var(--radius-md);
 }
 
+/* Preview Layout */
+.preview__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: var(--space-lg);
+}
+
+.preview__card--mock {
+  position: relative;
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  border: 2px dashed var(--color-primary);
+  background: #fffafa;
+}
+
+.preview__label {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-accent);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Non-functional Preview Button */
-.preview__button {
+.valentine__button {
   width: 100%;
-  padding: var(--space-md);
+  padding: var(--space-sm);
   border-radius: 999px;
   border: none;
-  background: var(--color-primary);
   color: var(--color-white);
   font-size: 1rem;
   margin-top: var(--space-sm);
   pointer-events: none;
 }
 
-.valentine__button--yes {
+.valentine__button--primary,
+.valentine__button--no {
   background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.valentine__button--yes {
+  background: var(--color-accent);
   color: var(--color-white);
 }
 
@@ -248,8 +288,8 @@
   width: 40px;
   height: 40px;
 }
-/* Status Section (List, Cards, Badges) */
 
+/* Status Section (List, Cards, Badges) */
 .dashboard-content {
   max-width: 900px;
   margin: 0 auto;

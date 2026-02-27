@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -20,6 +20,7 @@
       href="https://fonts.googleapis.com/css2?family=Carme&family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   </head>
 
   <body>
@@ -31,10 +32,10 @@
           alt="A cute bee holding a heart"
           class="valentine__bee"
         />
+        <p class="valentine__name"></p>
 
         <p class="valentine__text">
-          Hey Sarah, I know we are miles apart, but you make me smile every
-          single day...
+          I know we are miles apart, but you make me smile every single day...
         </p>
 
         <audio class="valentine__audio" controls>
@@ -68,5 +69,7 @@
         </button>
       </section>
     </main>
+
+    <script src="js/recipient.js"></script>
   </body>
 </html>

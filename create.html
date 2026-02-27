@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -127,27 +127,75 @@
         </section>
 
         <section class="preview hidden" id="live-preview">
-          <h3 class="preview__title">Your Card Preview</h3>
-          <p class="preview__subtitle">This is exactly what they will see!</p>
+          <h3 class="title">Your Card Journey Preview</h3>
+          <p class="description">
+            Step 1: They read your note. Step 2: You pop the question!
+          </p>
 
-          <div class="valentine__card">
-            <img src="images/bee.png" alt="Bee Mascot" class="valentine__bee" />
+          <div class="preview__grid">
+            <div class="valentine__card preview__card--mock">
+              <span class="preview__label">Step 1: The Message</span>
+              <img
+                src="images/bee.png"
+                alt="Bee Mascot"
+                class="valentine__bee"
+              />
+              <h3 id="preview-recipient-1" class="valentine__title caveat-font">
+                [Name],
+              </h3>
+              <p id="preview-text" class="valentine__text caveat-font">
+                Your message...
+              </p>
 
-            <h3
-              id="preview-recipient"
-              class="valentine__title caveat-font"
-            ></h3>
+              <audio
+                id="preview-audio-player-1"
+                class="valentine__audio"
+                controls
+              >
+                <source src="" type="audio/mpeg" />
+              </audio>
 
-            <p id="preview-text" class="valentine__text caveat-font"></p>
+              <div class="preview__button-mockup">
+                <button
+                  type="button"
+                  class="valentine__button valentine__button--primary"
+                >
+                  I have a question...
+                </button>
+              </div>
+            </div>
 
-            <audio id="preview-audio-player" class="valentine__audio" controls>
-              <source src="assets/audio/Breathless.mp3" type="audio/mpeg" />
-            </audio>
+            <div class="valentine__card preview__card--mock">
+              <span class="preview__label">Step 2: The Question</span>
+              <img
+                src="images/bee.png"
+                alt="Bee Mascot"
+                class="valentine__bee"
+              />
+              <h3 class="valentine__title">Will you Bee my Valentine?</h3>
 
-            <div class="preview__button-mockup">
-              <button type="button" class="preview__button">
-                I have a question...
-              </button>
+              <audio
+                id="preview-audio-player-2"
+                class="valentine__audio"
+                controls
+              >
+                <source src="" type="audio/mpeg" />
+              </audio>
+
+              <div class="preview__button-mockup flex-col gap-xs">
+                <button
+                  type="button"
+                  class="valentine__button valentine__button--yes"
+                >
+                  YES!
+                </button>
+                <button
+                  type="button"
+                  class="valentine__button valentine__button--no"
+                >
+                  Maybe Later...
+                </button>
+              </div>
             </div>
           </div>
           <div class="share">

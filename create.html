@@ -6,6 +6,20 @@
     <title>Create Your Valentine</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/create.css" />
+
+    <!-- custom font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Carme&family=Caveat:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
@@ -14,134 +28,220 @@
         <a href="index.html" class="logo__link" aria-label="BeeMyVal homepage">
           <img src="images/logo.png" alt="BeeMyVal Logo" class="nav__logo" />
         </a>
-        <button class="nav__toggle" aria-label="Open menu">
-          ☰
-        </button> 
+        <button class="nav__toggle" aria-label="Open menu">☰</button>
         <div class="nav__links">
           <a href="index.html" class="nav__item">Home</a>
           <a href="index.html#about" class="nav__item">About</a>
 
-          <a href="index.html" class="nav__item nav__item-cta ">Log Out</a>
+          <a id="logout-btn" class="nav__item nav__item-cta">Log Out</a>
         </div>
       </nav>
     </header>
-    <main class="create">
-      <section class="create__dashboard">
-        <h1 class="create__title">Create Your Love Note</h1>
-        <p class="create__description">
-          Fill in the details below to generate your custom Valentine link.
-        </p>
-
-        <form class="form form--card" id="valentine-form">
-          <div class="form__group">
-            <label for="receiver" class="form__label">To:</label>
-            <input
-              type="text"
-              id="receiver"
-              name="receiver"
-              class="form__input"
-              placeholder="To:"
-              required
-            />
-          </div>
-
-          <div class="form__group">
-            <label for="message" class="form__label">Your Message:</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              class="form__textarea"
-              placeholder="Write something from the heart..."
-              required
-            ></textarea>
-          </div>
-
-          <div class="form__group">
-            <label for="music-choice" class="form__label">
-              Set the Mood (Pick a Song)
-            </label>
-            <select id="music-choice" name="music" class="form__select">
-              <option value="Breatheless.mp3">
-                🎵 Breatheless - Shayne Ward
-              </option>
-              <option value="LittleThings.mp3">
-                🎵 Little Things - Ella Mai
-              </option>
-              <option value="Perfect.mp3">🎵 Perfect - Ed Sheeran</option>
-              <option value="Love-Egbugomo.mp3">
-                🎵 Love Egbugomo - Chike
-              </option>
-            </select>
-          </div>
-
-          <button type="submit" class="form__button form__button--primary">
-            Submit
-          </button>
-
-          <button
-            type="button"
-            id="preview-btn"
-            class="form__button form__button--outline"
-          >
-            Preview My Card
-          </button>
-        </form>
+    <main class="dashboard-container">
+      <section class="welcome-banner">
+        <h1 class="create__title">
+          Hello, <span id="user-display-name">Valentine</span>! 💝
+        </h1>
+        <p class="create__description">What would you like to do today?</p>
       </section>
 
-      <section class="preview hidden" id="live-preview">
-        <h2 class="preview__title">Your Card Preview</h2>
-        <p class="preview__subtitle">This is exactly what they will see!</p>
-
-        <div class="preview__card">
-          <h3 id="preview-recipient" class="preview__recipient">
-            Dear [Name],
-          </h3>
-
-          <p id="preview-text" class="preview__text">
-            Your romantic message will appear here...
-          </p>
-
-          <p class="preview__mood-label">
-            <strong>Selected Mood:</strong>
-          </p>
-
-          <audio
-            id="preview-audio-player"
-            class="preview__audio"
-            controls
-            preload="auto"
-          >
-            <source src="assets/audio/Breathless.mp3" type="audio/mpeg" />
-          </audio>
+      <section class="action-grid" id="dashboard-menu">
+        <div class="action-card" onclick="showSection('create-section')">
+          <div class="icon">✍️</div>
+          <h2>Create New Request</h2>
+          <p>Draft a beautiful note and pick a song.</p>
         </div>
 
-        <div class="share">
-          <h3 class="share__title">Ready to share the love?</h3>
-          <p class="share__description">
-            Copy this link and send it to your person via WhatsApp or DM:
+        <div class="action-card" onclick="showSection('status-section')">
+          <div class="icon">💌</div>
+          <h2>Track My Requests</h2>
+          <p>See who has accepted or declined.</p>
+        </div>
+      </section>
+
+      <section id="create-section" class="content-section hidden">
+        <button class="back-btn" onclick="showHome()">
+          ← Back to Dashboard
+        </button>
+        <section class="create__dashboard">
+          <h3 class="title">Create Your Love Note</h3>
+          <p class="description">
+            Fill in the details below to generate your custom Valentine link.
           </p>
 
-          <div class="share__link-box">
-            <input
-              type="text"
-              id="generated-link"
-              class="share__input"
-              readonly
-              value="Link will appear here..."
-            />
-            <button type="button" id="copy-btn" class="share__button">
-              Copy Link
-            </button>
-          </div>
+          <form class="form form__card" id="valentine-form">
+            <div class="form__group">
+              <label for="receiver" class="form__label">To:</label>
+              <input
+                type="text"
+                id="receiver"
+                name="receiver"
+                class="form__input"
+                placeholder="To:"
+                required
+              />
+            </div>
 
-          <div class="share__socials">
-            <a href="#" class="share__icon">
-              <img src="images/whatsapp.png" alt="WhatsApp" />
-            </a>
-            <a href="#" class="share__icon">
-              <img src="images/instagram.png" alt="Instagram" />
-            </a>
+            <div class="form__group">
+              <label for="message" class="form__label">Your Message:</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                class="form__textarea"
+                placeholder="Write something from the heart..."
+                required
+              ></textarea>
+            </div>
+
+            <div class="form__group">
+              <label for="music-choice" class="form__label">
+                Set the Mood (Pick a Song)
+              </label>
+              <select id="music-choice" name="music" class="form__select">
+                <option value="Breathless.mp3">
+                  🎵 Breathless - Shayne Ward
+                </option>
+                <option value="LittleThings.mp3">
+                  🎵 Little Things - Ella Mai
+                </option>
+                <option value="Perfect.mp3">🎵 Perfect - Ed Sheeran</option>
+                <option value="Love-Egbugomo.mp3">
+                  🎵 Love Egbugomo - Chike
+                </option>
+              </select>
+            </div>
+
+            <button type="submit" class="form__button form__button--primary">
+              Submit
+            </button>
+
+            <button
+              type="button"
+              id="preview-btn"
+              class="form__button form__button--outline"
+            >
+              Preview My Card
+            </button>
+          </form>
+        </section>
+
+        <section class="preview hidden" id="live-preview">
+          <h3 class="title">Your Card Journey Preview</h3>
+          <p class="description">
+            Step 1: They read your note. Step 2: You pop the question!
+          </p>
+
+          <div class="preview__grid">
+            <div class="valentine__card preview__card--mock">
+              <span class="preview__label">Step 1: The Message</span>
+              <img
+                src="images/bee.png"
+                alt="Bee Mascot"
+                class="valentine__bee"
+              />
+              <h3 id="preview-recipient-1" class="valentine__title caveat-font">
+                [Name],
+              </h3>
+              <p id="preview-text" class="valentine__text caveat-font">
+                Your message...
+              </p>
+
+              <audio
+                id="preview-audio-player-1"
+                class="valentine__audio"
+                controls
+              >
+                <source src="" type="audio/mpeg" />
+              </audio>
+
+              <div class="preview__button-mockup">
+                <button
+                  type="button"
+                  class="valentine__button valentine__button--primary"
+                >
+                  I have a question...
+                </button>
+              </div>
+            </div>
+
+            <div class="valentine__card preview__card--mock">
+              <span class="preview__label">Step 2: The Question</span>
+              <img
+                src="images/bee.png"
+                alt="Bee Mascot"
+                class="valentine__bee"
+              />
+              <h3 class="valentine__title">Will you Bee my Valentine?</h3>
+
+              <audio
+                id="preview-audio-player-2"
+                class="valentine__audio"
+                controls
+              >
+                <source src="" type="audio/mpeg" />
+              </audio>
+
+              <div class="preview__button-mockup flex-col gap-xs">
+                <button
+                  type="button"
+                  class="valentine__button valentine__button--yes"
+                >
+                  YES!
+                </button>
+                <button
+                  type="button"
+                  class="valentine__button valentine__button--no"
+                >
+                  Maybe Later...
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="share">
+            <h3 class="share__title">Ready to share the love?</h3>
+            <p class="share__description">
+              Copy this link and send it to your person via WhatsApp or DM:
+            </p>
+
+            <div class="share__link-box">
+              <input
+                type="text"
+                id="generated-link"
+                class="share__input"
+                readonly
+                value="Link will appear here..."
+              />
+              <button type="button" id="copy-btn" class="share__button">
+                Copy Link
+              </button>
+            </div>
+
+            <div class="share__socials">
+              <a href="#" class="share__icon">
+                <img src="images/whatsapp.png" alt="WhatsApp" />
+              </a>
+              <a href="#" class="share__icon">
+                <img src="images/instagram.png" alt="Instagram" />
+              </a>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section id="status-section" class="content-section hidden">
+        <button class="back-btn" onclick="showHome()">
+          ← Back to Dashboard
+        </button>
+
+        <h3 class="title">Your Requests</h3>
+        <p class="description">View responses to the messages you've sent.</p>
+
+        <div class="dashboard-content">
+          <div id="messageList" class="message-list"></div>
+
+          <div id="emptyState" class="empty-state">
+            <p>You haven&apos;t created any Valentine messages yet.</p>
           </div>
         </div>
       </section>
@@ -174,5 +274,7 @@
     </footer>
 
     <script src="js/app.js"></script>
+    <script src="js/create.js"></script>
+    <script src="js/auth.js"></script>
   </body>
 </html>

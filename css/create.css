@@ -1,26 +1,76 @@
-/* Specific styles for create form page */
-
-.create {
-  padding: var(--section-py) var(--section-px);
-  min-height: 80vh;
+/* Specific styles for user dashboard */
+.dashboard-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  flex: 1;
 }
 
+.welcome-banner {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.action-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+  box-shadow: var(--shadow-soft);
+}
+
+.action-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--color-primary);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.action-card .icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Create Section (Form, Preview, Share) */
 .create__dashboard {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
 }
 
-.create__title {
+.title {
   margin-bottom: var(--space-sm);
   color: var(--color-accent);
+  text-align: center;
 }
 
-.create__description {
+.description {
   margin-bottom: var(--space-lg);
+  opacity: 0.9;
+  text-align: center;
 }
-
-/* === Form Component === */
 
 .form {
   display: flex;
@@ -28,7 +78,7 @@
   gap: var(--space-md);
 }
 
-.form--card {
+.form__card {
   background-color: var(--color-neutral);
   padding: var(--space-lg);
   border-radius: var(--radius-md);
@@ -59,6 +109,7 @@
 .form__textarea {
   resize: vertical;
   font-family: var(--font-accent);
+  font-size: 24px;
 }
 
 .form__button {
@@ -89,36 +140,112 @@
   color: var(--color-white);
 }
 
-/* === Preview Section === */
-
+/* Preview & Share */
 .preview {
   max-width: 800px;
   margin: var(--space-lg) auto;
   text-align: center;
 }
 
-.preview__card {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  padding: var(--space-lg);
-  border-radius: var(--radius-md);
-  margin: var(--space-lg) 0;
+.valentine__card {
+  position: relative;
+  max-width: 500px;
+  margin: var(--space-lg) auto;
+  padding: var(--space-xl);
+  border-radius: 32px;
+  text-align: center;
+  background: #fffafa;
   box-shadow: var(--shadow-soft);
-  text-align: left;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.preview__recipient {
-  margin-bottom: var(--space-sm);
-  color: var(--color-accent);
-}
-
-.preview__text {
-  font-family: var(--font-accent);
+.valentine__bee {
+  width: 100px;
+  background: var(--color-neutral);
+  border-radius: 50%;
   margin-bottom: var(--space-md);
-  line-height: 1.6;
 }
 
-/* === Share Section === */
+.valentine__title {
+  font-size: var(--fs-h2);
+  margin: var(--space-md) 0;
+  color: var(--color-secondary);
+  font-weight: bold;
+}
+
+.valentine__text {
+  font-size: var(--fs-big);
+  font-family: var(--font-accent);
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+  color: var(--color-black);
+}
+
+.valentine__audio {
+  width: 100%;
+  margin: var(--space-md) 0;
+  border-radius: var(--radius-md);
+}
+
+/* Preview Layout */
+.preview__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: var(--space-lg);
+}
+
+.preview__card--mock {
+  position: relative;
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  border: 2px dashed var(--color-primary);
+  background: #fffafa;
+}
+
+.preview__label {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-accent);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Non-functional Preview Button */
+.valentine__button {
+  width: 100%;
+  padding: var(--space-sm);
+  border-radius: 999px;
+  border: none;
+  color: var(--color-white);
+  font-size: 1rem;
+  margin-top: var(--space-sm);
+  pointer-events: none;
+}
+
+.valentine__button--primary,
+.valentine__button--no {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.valentine__button--yes {
+  background: var(--color-accent);
+  color: var(--color-white);
+}
 
 .share {
   background-color: var(--color-neutral);
@@ -162,7 +289,54 @@
   height: 40px;
 }
 
-/* Utility */
+/* Status Section (List, Cards, Badges) */
+.dashboard-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.message-card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 5px solid var(--color-primary);
+}
+
+.status {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.status-pending {
+  background: #fff3cd;
+  color: #856404;
+}
+.status-accepted {
+  background: #d4edda;
+  color: #155724;
+}
+.status-declined {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.empty-state {
+  text-align: center;
+  padding: var(--space-lg);
+  background: var(--color-neutral);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Utilities */
 .hidden {
-  display: none;
+  display: none !important;
 }

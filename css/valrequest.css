@@ -37,6 +37,13 @@ body {
 }
 
 /* ===== Typography ===== */
+.valentine__name {
+  font-size: var(--fs-big);
+  font-family: var(--font-main);
+  font-weight: var(--fw-bold);
+  margin: var(--space-xs) 0;
+  color: var(--color-secondary);
+}
 
 .valentine__title {
   font-size: var(--fs-h2);
@@ -86,6 +93,55 @@ body {
 
 .hidden {
   display: none;
+}
+
+/* Rain Overlay */
+.rain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 100;
+  background: rgba(0, 0, 50, 0.1);
+}
+
+.raindrop {
+  position: absolute;
+  top: -10px;
+  width: 2px;
+  height: 15px;
+  background: rgba(255, 255, 255, 0.6);
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+  }
+}
+
+/* Acceptance Animation */
+.animate__bounceIn {
+  animation: bounceIn 0.8s cubic-bezier(0.36, 0, 0.66, -0.56) forwards;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @media (max-width: 480px) {

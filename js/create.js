@@ -1,11 +1,5 @@
-// 1. Mock data
-// const mockRequests = [
-//   { recipient: "Rose", date: "2026-02-14", status: "accepted" },
-//   { recipient: "Amaka", date: "2026-02-12", status: "pending" },
-//   { recipient: "My love", date: "2026-02-10", status: "declined" },
-// ];
 
-// 3. Navigation functions: Handles switching views within the dashboard
+// Navigation functions: Handles switching views within the dashboard
 function showSection(sectionId) {
   // Hide the Main Menu Grid and Welcome Banner
   document.getElementById("dashboard-menu").classList.add("hidden");
@@ -17,10 +11,10 @@ function showSection(sectionId) {
   // If opening the status section, draw the list of cards
   if (sectionId === "status-section") {
     const messages = JSON.parse(
-      localStorage.getItem("beemyval_messages") || "[]",
+      localStorage.getItem("beemyval_messages") || "[]"
     );
     const filteredMessages = messages.filter(
-      (msg) => msg.userName === localStorage.getItem("beemyval_user"),
+      (msg) => msg.userName === localStorage.getItem("beemyval_user")
     );
     renderStatusList(filteredMessages);
   }
@@ -37,7 +31,7 @@ function showHome() {
   document.querySelector(".welcome-banner").classList.remove("hidden");
 }
 
-// 4. Create and Render the HTML for the status cards
+// Create and Render the HTML for the status cards
 function renderStatusList(requests) {
   const messageList = document.getElementById("messageList");
   const emptyState = document.getElementById("emptyState");
@@ -61,7 +55,7 @@ function renderStatusList(requests) {
       </div>
       <span class="status status-${req.status}">${req.status}</span>
     </div>
-  `,
+  `
     )
     .join("");
 }
@@ -79,7 +73,8 @@ function submitMessage(event) {
     return;
   }
 
-  const uniqueId = Date.now().toString(36) + Math.random().toString(36).substring(2);
+  const uniqueId =
+    Date.now().toString(36) + Math.random().toString(36).substring(2);
 
   const newData = {
     id: uniqueId,
@@ -93,31 +88,35 @@ function submitMessage(event) {
 
   // store in localstorage for now
   const existingMessages = JSON.parse(
-    localStorage.getItem("beemyval_messages") || "[]",
+    localStorage.getItem("beemyval_messages") || "[]"
   );
   localStorage.setItem(
     "beemyval_messages",
-    JSON.stringify([...existingMessages, newData]),
+    JSON.stringify([...existingMessages, newData])
   );
-  
+
   // Generate custom link
-  const baseUrl = window.location.origin + window.location.pathname.replace('create.html', '');
+  const baseUrl =
+    window.location.origin +
+    window.location.pathname.replace("create.html", "");
   const customLink = `${baseUrl}valrequest.html?id=${uniqueId}`;
-  
+
   // Update the link input field
   const linkInput = document.getElementById("generated-link");
   if (linkInput) {
     linkInput.value = customLink;
   }
 
-  alert("Your message has been sent! You can now copy the link from the preview section.");
+  alert(
+    "Your message has been sent! You can now copy the link from the preview section."
+  );
 
   // Reset form but don't go back to home immediately so they can copy the link
   // document.getElementById("valentine-form").reset();
   // showHome();
 }
 
-// 2. Runs when the page loads
+// Runs when the page loads
 document.addEventListener("DOMContentLoaded", () => {
   // Personalized Welcome Message
   const userName = localStorage.getItem("beemyval_user");
@@ -126,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
     displayElement.textContent = userName;
   }
 
-  // Preview Logic
+  // Preview Logic (Two-Card Update)
   const previewBtn = document.getElementById("preview-btn");
   const previewSection = document.getElementById("live-preview");
 
@@ -136,15 +135,23 @@ document.addEventListener("DOMContentLoaded", () => {
       const message = document.getElementById("message").value;
       const music = document.getElementById("music-choice").value;
 
-      document.getElementById("preview-recipient").textContent = `Dear ${
+      // Preview Card 1: The Message
+      document.getElementById("preview-recipient-1").textContent = `${
         recipient || "[Name]"
       }`;
       document.getElementById("preview-text").textContent =
         message || "Your message will appear here...";
 
-      const audioPlayer = document.getElementById("preview-audio-player");
-      audioPlayer.src = `assets/audio/${music}`;
-      audioPlayer.load();
+      const audio1 = document.getElementById("preview-audio-player-1");
+      const audio2 = document.getElementById("preview-audio-player-2");
+
+      [audio1, audio2].forEach((player) => {
+        if (player) {
+          const source = player.querySelector("source");
+          source.src = `assets/audio/${music}`;
+          player.load();
+        }
+      });
 
       previewSection.classList.remove("hidden");
       previewSection.scrollIntoView({ behavior: "smooth" });

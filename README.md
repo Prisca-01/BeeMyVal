@@ -13,6 +13,8 @@ BeeMyVal is a love-themed web experience designed to help users ask someone spec
 
   **[Daniel Chisom](https://medium.com/@chinwezechisom/beemyval-case-study-7f9cec37c7d6)**
 
+**Presentation slide:** https://gamma.app/docs/BeeMyVal-44enqkf1833qb13
+
 ## 📖 Case Study Summary
 
 BeeMyVal is a web-based platform that transforms the simple “Will you be my Valentine?” message into a more thoughtful and emotionally engaging digital experience. It is designed to help users express affection with confidence, especially in situations where distance, shyness, or impersonal messaging can make romantic expression difficult.

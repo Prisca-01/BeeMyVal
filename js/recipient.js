@@ -70,12 +70,7 @@ function updateStatus(id, newStatus) {
   const container = document.querySelector(".valentine");
 
   if (newStatus === "accepted") {
-    confetti({
-      particleCount: 150,
-      spread: 70,
-      origin: { y: 0.6 },
-      colors: ["#ff4d6d", "#ff758f", "#ffb3c1", "#ffffff"],
-    });
+    startHearts();
 
     container.innerHTML = `
       <section class="valentine__card animate__bounceIn">
@@ -97,7 +92,31 @@ function updateStatus(id, newStatus) {
   }
 }
 
-// Custom Rain Effect for the "No" button
+// Heart Effect for the "Yes" button
+function startHearts() {
+  const heartContainer = document.createElement("div");
+  heartContainer.className = "heart-container";
+  document.body.appendChild(heartContainer);
+
+  const heartTypes = ["💖", "💗", "💘", "💝", "❤️"];
+
+  for (let i = 0; i < 40; i++) {
+    const heart = document.createElement("div");
+    heart.className = "heart-drop";
+    heart.innerHTML = heartTypes[Math.floor(Math.random() * heartTypes.length)];
+    
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+    heart.style.fontSize = Math.random() * 1.5 + 1 + "rem";
+    heart.style.opacity = Math.random();
+    
+    heartContainer.appendChild(heart);
+    
+    setTimeout(() => heart.remove(), 5000);
+  }
+}
+
+// Rain effect for "Maybe later" button
 function startRain() {
   const rainContainer = document.createElement("div");
   rainContainer.className = "rain-overlay";
